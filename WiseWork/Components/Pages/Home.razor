@@ -1,0 +1,543 @@
+﻿@page "/"
+@using WiseWork.Components
+@using WiseWork.Services
+@using WiseWork.Hubs
+@using WiseWork.Models
+@using MudBlazor
+@inject RoomService RoomService
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.SignalR.Client
+@rendermode InteractiveServer
+
+<div class="background-container">
+    <div class="floating-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+        <div class="shape shape6"></div>
+        <div class="shape shape7"></div>
+        <div class="shape shape8"></div>
+        <div class="shape shape9"></div>
+        <div class="shape shape10"></div>
+    </div>
+
+    <MudContainer MaxWidth="MaxWidth.Small" Class="mt-16">
+        <MudPaper Elevation="24" Class="pa-8 content-paper">
+            <MudText Typo="Typo.h2" Align="Align.Center" GutterBottom="true" Class="room-manager-title">
+                <span class="gradient-text">ROOM MANAGER</span>
+            </MudText>
+            <MudDivider Class="my-6" />
+            @if (string.IsNullOrEmpty(CurrentGamePin))
+            {
+                <MudTextField @bind-Value="PlayerName"
+                              Placeholder="Your Name"
+                              Variant="Variant.Outlined"
+                              Class="mb-6 name-input"
+                              FullWidth="true"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.Person" />
+
+                @if (!JoiningRoom)
+                {
+                    <MudButton Variant="Variant.Filled" Color="Color.Secondary" FullWidth="true" OnClick="CreateRoom" Disabled="@string.IsNullOrWhiteSpace(PlayerName)" Class="py-3 rounded-lg custom-button create-button mb-4">
+                        <MudIcon Icon="@Icons.Material.Filled.Add" Class="mr-2" />
+                        Create Room
+                    </MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" OnClick="@(() => JoiningRoom = true)" Disabled="@string.IsNullOrWhiteSpace(PlayerName)" Class="py-3 rounded-lg custom-button join-button mb-4">
+                        <MudIcon Icon="@Icons.Material.Filled.Login" Class="mr-2" />
+                        Join Room
+                    </MudButton>
+                }
+                else
+                {
+                    <MudTextField @bind-Value="GamePinToJoin"
+                                  Placeholder="Enter GamePin"
+                                  Variant="Variant.Outlined"
+                                  Class="mb-6 pin-input"
+                                  FullWidth="true"
+                                  MaxLength="6"
+                                  InputType="InputType.Text"
+                                  Adornment="Adornment.Start"
+                                  AdornmentIcon="@Icons.Material.Filled.Pin"
+                                  TextChanged="OnGamePinInput" />
+
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Success"
+                               FullWidth="true"
+                               OnClick="JoinRoom"
+                               Disabled="@string.IsNullOrWhiteSpace(GamePinToJoin)"
+                               Class="py-3 rounded-lg custom-button join-button-direct mb-4">
+                        Join
+                    </MudButton>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Secondary" FullWidth="true" OnClick="@(() => JoiningRoom = false)" Class="py-3 rounded-lg custom-button back-button">
+                        Back
+                    </MudButton>
+                }
+            }
+            else
+            {
+                <div class="game-pin-container">
+                    <MudText Typo="Typo.h4" Align="Align.Center" GutterBottom="true" Class="game-pin-title">Game PIN</MudText>
+                    <MudText Typo="Typo.h2" Align="Align.Center" GutterBottom="true" Class="game-pin-value">@CurrentGamePin</MudText>
+                </div>
+                <MudText Typo="Typo.body1" Class="mb-4 bold-text">Your Name: <MudText Color="Color.Info" Class="player-name">@PlayerName</MudText></MudText>
+                <MudText Typo="Typo.body1" Class="mb-4 bold-text">Players:</MudText>
+                <MudChipSet T="string" Class="mb-6 player-chips">
+                    @foreach (var member in Members)
+                    {
+                        <MudChip Color="Color.Info" Class="player-chip">@member.Value</MudChip>
+                    }
+                </MudChipSet>
+                <div class="d-flex justify-space-between align-center mt-4">
+                    <MudButton Variant="Variant.Outlined"
+                               Color="Color.Error"
+                               OnClick="LeaveRoom"
+                               Class="py-3 rounded-lg custom-button leave-button">
+                        Leave Room
+                    </MudButton>
+                    @if (!IsGameStarted && IsRoomCreator)
+                    {
+                        <MudButton Variant="Variant.Filled"
+                                   Color="Color.Primary"
+                                   OnClick="StartGame"
+                                   Class="flex-grow-1 ml-2 py-2 rounded-lg custom-button start-button">
+                            Start Game
+                        </MudButton>
+                    }
+                </div>
+
+            }
+        </MudPaper>
+    </MudContainer>
+</div>
+
+<style>
+    .background-container {
+        background-color: #01579B; /* You can change this to any color you prefer */
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+
+    .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .shape {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 20s infinite;
+        z-index: 1;
+        opacity: 0.5;
+    }
+
+    .shape1 {
+        width: 100px;
+        height: 100px;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        left: 10%;
+        top: 20%;
+    }
+
+    .shape2 {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        right: 15%;
+        top: 15%;
+    }
+
+    .shape3 {
+        width: 120px;
+        height: 120px;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        left: 20%;
+        bottom: 20%;
+    }
+
+    .shape4 {
+        width: 80px;
+        height: 80px;
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        right: 25%;
+        bottom: 30%;
+    }
+
+    .shape5 {
+        width: 140px;
+        height: 140px;
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        left: 30%;
+        top: 40%;
+    }
+
+    .shape6 {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+        transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+        right: 40%;
+        top: 30%;
+    }
+
+    .shape7 {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+        transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+        left: 40%;
+        bottom: 35%;
+    }
+
+    .shape8 {
+        width: 90px;
+        height: 90px;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        right: 10%;
+        bottom: 15%;
+    }
+
+    .shape9 {
+        width: 110px;
+        height: 110px;
+        background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 70%);
+        border-radius: 50%;
+        left: 5%;
+        top: 50%;
+    }
+
+    .shape10 {
+        width: 130px;
+        height: 130px;
+        background: conic-gradient(from 0deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        right: 5%;
+        top: 45%;
+    }
+
+    @@keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        20% {
+            transform: translateY(-20px) rotate(72deg);
+        }
+
+        40% {
+            transform: translateY(15px) rotate(144deg);
+        }
+
+        60% {
+            transform: translateY(-25px) rotate(216deg);
+        }
+
+        80% {
+            transform: translateY(20px) rotate(288deg);
+        }
+    }
+
+
+    .content-paper {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 30px;
+        width: 95%;
+        max-width: 500px;
+        margin: 0 auto;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        z-index: 10;
+        position: relative;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        overflow: hidden;
+    }
+
+        .content-paper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient( to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05) );
+            transform: rotate(-45deg);
+            pointer-events: none;
+        }
+
+    .room-manager-title {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .gradient-text {
+        background: linear-gradient(45deg, #FF4081, #2196F3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .player-chips {
+        max-height: 150px; /* Limit height */
+        overflow-y: auto; /* Make scrollable if needed */
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .player-chip {
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, #FF4081, #2196F3);
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        padding: 0.25rem 0.5rem; /* More compact */
+        font-size: 0.9rem;
+    }
+
+        .player-chip:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Rest of the styles remain unchanged */
+
+    .name-input, .pin-input {
+        margin-bottom: 1.5rem;
+    }
+
+    .game-pin-container {
+        text-align: center;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #f6f6f6, #e9e9e9);
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .game-pin-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .game-pin-value {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1E88E5;
+        letter-spacing: 0.2em;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .bold-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .player-name {
+        font-weight: 700;
+        color: #1E88E5;
+    }
+
+    .player-chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .player-chip {
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+    }
+
+    .custom-button {
+        height: 54px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+        .custom-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+    .create-button {
+        background-color: #FF4081 !important;
+    }
+
+    .join-button {
+        background-color: #2196F3 !important;
+    }
+
+    .join-button-direct {
+        background-color: #4CAF50 !important;
+        color: white !important;
+    }
+
+    .leave-button {
+        background-color: #F44336 !important;
+        color: white !important;
+    }
+
+    .start-button {
+        background-color: #4CAF50 !important;
+        color: white !important;
+    }
+
+    .back-button {
+        border: 2px solid #9E9E9E;
+        color: #9E9E9E;
+    }
+
+    .name-input ::deep .mud-input-outlined-adornment {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    .name-input ::deep .mud-input > input::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+
+</style>
+
+
+@code {
+    private string CurrentGamePin { get; set; }
+    private string PlayerName { get; set; }
+    private Dictionary<string, string> Members { get; set; } = new Dictionary<string, string>();
+    private string GamePinToJoin { get; set; }
+    private HubConnection hubConnection;
+    private bool IsGameStarted { get; set; } = false;
+    private bool JoiningRoom { get; set; } = false;
+    private bool IsRoomCreator { get; set; } = false;
+    private bool PlayerNamePlaceholderVisible { get; set; } = true;
+    private bool GamePinPlaceholderVisible { get; set; } = true;
+    private string PlayerNamePlaceholder => PlayerNamePlaceholderVisible ? "Enter Your Name" : "";
+    private string GamePinPlaceholder => GamePinPlaceholderVisible ? "Enter Game PIN" : "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/roomHub"))
+            .Build();
+
+        hubConnection.On<Dictionary<string, string>>("ReceiveMembersUpdate", async (members) =>
+        {
+            Members = members;
+            await InvokeAsync(StateHasChanged);
+        });
+
+        hubConnection.On<string>("StartGame", async (gamePin) =>
+        {
+            IsGameStarted = true;
+            await InvokeAsync(() => NavigationManager.NavigateTo($"/dashboard/{CurrentGamePin}/{PlayerName}"));
+
+        });
+
+        hubConnection.On("RoomDeleted", async () =>
+        {
+            CurrentGamePin = null;
+            Members.Clear();
+            IsGameStarted = false;
+            IsRoomCreator = false;
+            await InvokeAsync(StateHasChanged);
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    private void OnGamePinInput(string value)
+    {
+        if (value.Length > 6)
+        {
+            GamePinToJoin = value.Substring(0, 6);
+        }
+        else
+        {
+            GamePinToJoin = value;
+        }
+    }
+
+    private async Task CreateRoom()
+    {
+        var playerId = Guid.NewGuid().ToString();
+        var (room, _) = RoomService.CreateRoom(playerId, PlayerName);
+        CurrentGamePin = room.GamePin;
+        Members = room.Members;
+        IsGameStarted = false;
+        IsRoomCreator = true;
+        await hubConnection.SendAsync("JoinRoom", CurrentGamePin);
+        await hubConnection.SendAsync("SendMembersUpdate", CurrentGamePin, Members);
+        StateHasChanged();
+    }
+
+    private async Task JoinRoom()
+    {
+        if (!string.IsNullOrEmpty(GamePinToJoin))
+        {
+            var playerId = Guid.NewGuid().ToString();
+            var (success, _) = RoomService.JoinRoom(GamePinToJoin, playerId, PlayerName);
+            if (success)
+            {
+                CurrentGamePin = GamePinToJoin;
+                Members = RoomService.GetRoom(CurrentGamePin).Members;
+                IsGameStarted = false;
+                IsRoomCreator = false;
+                await hubConnection.SendAsync("JoinRoom", CurrentGamePin);
+                await hubConnection.SendAsync("SendMembersUpdate", CurrentGamePin, Members);
+                JoiningRoom = false;
+                StateHasChanged();
+            }
+            else
+            {
+                Console.WriteLine("Failed to join room. Room might be full or doesn't exist.");
+            }
+        }
+    }
+
+    private async Task LeaveRoom()
+    {
+        await hubConnection.SendAsync("LeaveRoom", CurrentGamePin, PlayerName);
+        CurrentGamePin = null;
+        Members.Clear();
+        IsGameStarted = false;
+        IsRoomCreator = false;
+        StateHasChanged();
+    }
+
+
+
+    private async Task StartGame()
+    {
+        if (IsRoomCreator)
+        {
+            await hubConnection.SendAsync("StartGame", CurrentGamePin);
+            NavigationManager.NavigateTo($"/dashboard/{CurrentGamePin}/{PlayerName}", forceLoad: true);
+        }
+    }
+}

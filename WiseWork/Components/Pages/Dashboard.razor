@@ -1,0 +1,1234 @@
+﻿@page "/dashboard/{GamePin}/{PlayerName}"
+@using System.Threading
+@using WiseWork.Services
+@using WiseWork.Models
+@using Microsoft.AspNetCore.SignalR.Client
+@inject ILogger<Dashboard> Logger
+@inject IJSRuntime JSRuntime
+@inject RoomService RoomService
+@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+@rendermode InteractiveServer
+@using FuzzySharp
+@using MudBlazor
+
+<div class="dashboard">
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/Images/logo.jpg" alt="Quiz Game Logo" />
+        </div>
+        <div class="timer-container">
+            <svg class="timer-svg" width="160" height="160" viewBox="0 0 160 160">
+                <circle class="timer-background" cx="80" cy="80" r="70" />
+                <circle class="timer-progress" cx="80" cy="80" r="70"
+                        stroke-dasharray="@(2 * Math.PI * 70)"
+                        stroke-dashoffset="@_dashOffset" />
+                <text x="80" y="80" text-anchor="middle" dominant-baseline="central" class="timer-text">@_timeLeft</text>
+            </svg>
+        </div>
+
+        <div class="players-sidebar">
+            <h3>Players in Room</h3>
+            @if (room != null && room.Members != null && room.Members.Any())
+            {
+                <ol class="players-list">
+                    @foreach (var playerName in room.Members.Values.Distinct())
+                    {
+                        <li class="player-item">@playerName</li>
+                    }
+                </ol>
+            }
+            else
+            {
+                <p>No players in the room yet.</p>
+            }
+        </div>
+
+        <button class="exit-button" @onclick="ShowExitConfirmation">Exit Game</button>
+    </div>
+
+    <div class="main-content">
+        <div class="stats-row">
+            <div class="stat-card bordered-box">
+                <h3>Total      Score</h3>
+                <p class="stat-number">@totalScore</p>
+            </div>
+            <div class="stat-card bordered-box">
+                <h3>Questions Answered</h3>
+                <p class="stat-number">@questionsAnswered</p>
+            </div>
+            <div class="stat-card bordered-box">
+                <h3>Winning      Score</h3>
+                <p class="stat-number">1000</p>
+            </div>
+            <div class="stat-card bordered-box">
+                <h3>Game Ends       In</h3>
+                <p class="stat-number">@FormatTimeRemaining()</p>
+            </div>
+        </div>
+
+        @if (currentImage != null)
+        {
+            <div class="quiz-section">
+                <div class="image-container">
+                    <img src="@currentImage.Path" alt="Quiz Image" />
+                </div>
+                <div class="question-container">
+                    <h3>@currentImage.question</h3>
+                    <div class="input-group">
+                        @if (!hasAnsweredCurrentQuestion)
+                        {
+                            <input type="text" @bind="userAnswer" @bind:event="oninput" placeholder="Enter your answer" @onkeyup="SubmitAnswerOnEnter" />
+                            <button @onclick="async () => await SubmitAnswer()">
+                                Submit
+                            </button>
+                        }
+                        else if (isWaitingForNextQuestion)
+                        {
+                            <p>Waiting for other players or for the timer to run out...</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+@if (showPopup)
+{
+    <div class="popup-overlay">
+        <div class="popup @(isCorrect ? "correct" : "incorrect")">
+            <p>
+                <span class="result-symbol">@(isCorrect ? "✓" : "✗")</span>
+                @userAnswer
+            </p>
+            <p>@resultMessage</p>
+        </div>
+    </div>
+}
+
+@if (gameEnded)
+{
+    <div class="popup-overlay">
+        <div class="popup game-over">
+            <h2>GAME OVER</h2>
+            @if (winnerName != null)
+            {
+                <h3>Winner:</h3>
+                <p>@winnerName</p>
+            }
+            else
+            {
+                <p>No one reached 1000 points.</p>
+            }
+            <button @onclick="ExitGame">Exit Game</button>
+        </div>
+    </div>
+}
+@if (showExitConfirmation)
+{
+    <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <div style="background-color: #16213e; color: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); max-width: 80%; width: 300px;">
+            <p>Are you sure? Do you want to exit the game?</p>
+            <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                <button @onclick="ConfirmExit" style="padding: 10px 20px; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100px; background-color: #4ecca3;">YES</button>
+                <button @onclick="CancelExit" style="padding: 10px 20px; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100px; background-color: #e84545;">NO</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public string GamePin { get; set; }
+    [Parameter]
+    public string PlayerName { get; set; }
+
+    private class QuizImage
+    {
+        public string imageName { get; set; }
+        public string question { get; set; }
+        public string answer { get; set; }
+        public string Path { get; set; }
+    }
+    private HubConnection hubConnection;
+    private Room room;
+    private List<QuizImage> quizImages = new List<QuizImage>();
+    private QuizImage currentImage;
+    private string userAnswer = "";
+    private string resultMessage = "";
+    private bool showPopup = false;
+    private bool isCorrect = false;
+    private int totalScore = 0;
+    private int questionsAnswered = 0;
+    private int _timeLeft = 60;
+    private double _dashOffset = 0;
+    private const double FULL_DASH_ARRAY = 2 * Math.PI * 70;
+    private System.Threading.Timer _timer;
+    private Dictionary<string, int> playerScores = new Dictionary<string, int>();
+    private Dictionary<string, (string Name, int Score)> topPlayers = new Dictionary<string, (string, int)>();
+    private int currentQuestionIndex = 0;
+    private string connectionId;
+    private string winnerName = null;
+    private bool isChecking = false;
+    private int _lastSyncedTime = 30; 
+    private const int SYNC_INTERVAL = 5; 
+
+
+    private bool gameEnded = false;
+    private bool isWinner = false;
+    private bool showLeaderboard = false;
+    private Dictionary<string, int> leaderboard = new Dictionary<string, int>();
+
+    private bool showExitConfirmation = false;
+
+    private bool hasAnsweredCurrentQuestion = false;
+    private bool isWaitingForNextQuestion = false;
+
+
+    private DateTime gameStartTime;
+    private const int GAME_DURATION_MINUTES = 15;
+    private System.Threading.Timer gameTimer;
+
+
+    private bool answerSubmitted = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await SetupSignalRConnection();
+        await LoadRoomData();
+        await LoadQuestions();
+        SetupGame();
+
+        if (room != null)
+        {
+            playerScores = room.PlayerScores;
+        }
+
+        // gameStartTime = await hubConnection.InvokeAsync<DateTime>("GetGameStartTime", GamePin);
+         gameTimer = new System.Threading.Timer(GameTimerCallback, null, 0, 1000);
+        await hubConnection.SendAsync("SyncGameEndTime", GamePin);
+
+        StartGameEndTimer();
+    }
+
+    private async Task SetupSignalRConnection()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/roomHub"))
+            .WithAutomaticReconnect()
+            .Build();
+
+        hubConnection.Reconnecting += (sender) =>
+        {
+            Logger.LogInformation("Attempting to reconnect...");
+            return Task.CompletedTask;
+        };
+
+        hubConnection.Reconnected += (sender) =>
+        {
+            Logger.LogInformation("Reconnected to the hub");
+            return Task.CompletedTask;
+        };
+
+        hubConnection.Closed += (sender) =>
+        {
+            Logger.LogInformation("Connection closed");
+            return Task.CompletedTask;
+        };
+
+        hubConnection.On<string>("ReceiveConnectionId", (id) =>
+        {
+            connectionId = id;
+            InvokeAsync(StateHasChanged);
+        });
+
+      
+
+        hubConnection.On<string>("WinnerAnnounced", (winnerName) =>
+        {
+            this.winnerName = winnerName;
+        gameEnded = true;
+        Console.WriteLine($"Winner announced: {winnerName}");
+        InvokeAsync(StateHasChanged);
+        });
+
+        hubConnection.On<DateTime>("SyncGameEndTime", (endTime) =>
+        {
+            gameStartTime = endTime;
+            InvokeAsync(StateHasChanged);
+        });
+
+        hubConnection.On<int>("SyncTimer", (timeLeft) =>
+        {
+            _timeLeft = timeLeft;
+            _dashOffset = FULL_DASH_ARRAY * (1 - _timeLeft / 30.0);
+            InvokeAsync(StateHasChanged);
+        });
+
+        hubConnection.On<Dictionary<string, string>>("ReceiveMembersUpdate", (members) =>
+        {
+            room.Members = members;
+            InvokeAsync(StateHasChanged);
+        });
+
+        hubConnection.On("RoomDeleted", () =>
+        {
+            NavigationManager.NavigateTo("/");
+        });
+
+
+
+        await hubConnection.StartAsync();
+        await hubConnection.SendAsync("JoinRoom", GamePin);
+        await hubConnection.SendAsync("GetConnectionId");
+        if (gameStartTime == default)
+        {
+            gameStartTime = DateTime.UtcNow.AddMinutes(GAME_DURATION_MINUTES);
+            await hubConnection.SendAsync("SetGameEndTime", GamePin, gameStartTime);
+        }
+    }
+
+   
+    private async Task LoadRoomData()
+    {
+        room = RoomService.GetRoom(GamePin);
+        if (room == null)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            await hubConnection.SendAsync("UpdatePlayerName", GamePin, PlayerName);
+        }
+    }
+
+    private void GameTimerCallback(object state)
+    {
+        var timeRemaining = gameStartTime - DateTime.Now;
+        if (timeRemaining <= TimeSpan.Zero)
+        {
+            EndGame();
+        }
+        else
+        {
+            InvokeAsync(StateHasChanged);
+        }
+    }
+    private void StartGameEndTimer()
+    {
+        var timer = new System.Threading.Timer(_ =>
+        {
+            InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        }, null, 0, 1000);
+    }
+
+    private string FormatTimeRemaining()
+{
+    var remainingTime = gameStartTime - DateTime.UtcNow;
+    return remainingTime > TimeSpan.Zero
+        ? $"{remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}"
+        : "00:00";
+}
+
+   
+    private async Task LoadQuestions()
+    {
+        string jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "quiz-questions.json");
+        string jsonContent = await File.ReadAllTextAsync(jsonPath);
+        var allQuestions = System.Text.Json.JsonSerializer.Deserialize<List<QuizImage>>(jsonContent);
+        string imageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "quiz-images");
+
+        // Ensure allQuestions is not null
+        if (allQuestions == null)
+        {
+            Logger.LogError("Failed to load questions from JSON file.");
+            return;
+        }
+
+        // Convert the GamePin to a seed value for randomization
+        int seed = GamePin.GetHashCode();
+        Random rng = new Random(seed);
+
+        // Shuffle the questions using the seed
+        quizImages = allQuestions.OrderBy(_ => rng.Next()).ToList();
+
+        // Assign image paths
+        foreach (var quizItem in quizImages)
+        {
+            quizItem.Path = $"/quiz-images/{quizItem.imageName}";
+        }
+    }
+
+
+    private void SetupGame()
+    {
+        if (quizImages.Any())
+        {
+            currentImage = quizImages[currentQuestionIndex];
+            StartTimer();
+        }
+    }
+
+    private void StartTimer()
+    {
+        _timer?.Dispose();
+        _timeLeft = 30;
+        _dashOffset = 0;
+        answerSubmitted = false;
+        hasAnsweredCurrentQuestion = false;
+        isWaitingForNextQuestion = false;
+        _timer = new System.Threading.Timer(TimerCallback, null, 0, 1000);
+    }
+
+
+    private async void TimerCallback(object state)
+    {
+        await InvokeAsync(async () =>
+        {
+            if (_timeLeft > 0)
+            {
+                _timeLeft--;
+                _dashOffset = FULL_DASH_ARRAY * (1 - _timeLeft / 30.0);
+
+                if (_lastSyncedTime - _timeLeft >= SYNC_INTERVAL)
+                {
+                    await hubConnection.SendAsync("UpdateTimerState", GamePin, _timeLeft);
+                    _lastSyncedTime = _timeLeft;
+                }
+
+                StateHasChanged();
+            }
+            else
+            {
+                _timer?.Dispose();
+                await ProcessAnswer();
+            }
+        });
+    }
+
+    private async Task SubmitAnswerOnEnter(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await SubmitAnswer();
+        }
+    }
+
+    private async Task SubmitAnswer()
+    {
+        if (isChecking || answerSubmitted) return;
+        isChecking = true;
+
+        try
+        {
+            answerSubmitted = true;
+            int matchRatio = Fuzz.Ratio(userAnswer.ToLower(), currentImage.answer.ToLower());
+            isCorrect = matchRatio >= 80;
+
+            if (isCorrect)
+            {
+                int score = CalculateScore();
+                totalScore += score;
+                questionsAnswered++;
+                resultMessage = $"Correct! You earned {score} points.";
+
+                if (true)
+                {
+                    if (totalScore >= 1000 && winnerName == null)
+                    {
+                        winnerName = PlayerName;
+                        await hubConnection.SendAsync("AnnounceWinner", GamePin, winnerName);
+                        Console.WriteLine($"Winner set: {winnerName}");
+                        await GameOver();
+                        return;
+                    }
+
+                    if (playerScores.ContainsKey(PlayerName))
+                    {
+                        playerScores[PlayerName] = totalScore;
+                    }
+                    else
+                    {
+                        playerScores.Add(PlayerName, totalScore);
+                    }
+                    Console.WriteLine($"Current score: {totalScore}");
+                    
+
+                    await InvokeAsync(StateHasChanged);
+                }
+            }
+            else
+            {
+                resultMessage = $"Incorrect. The correct answer is {currentImage.answer}.";
+            }
+
+            showPopup = true;
+            hasAnsweredCurrentQuestion = true;
+            await InvokeAsync(StateHasChanged);
+
+            await Task.Delay(2000);
+            showPopup = false;
+            isWaitingForNextQuestion = true;
+
+            await InvokeAsync(StateHasChanged);
+        }
+        finally
+        {
+            isChecking = false;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+    private async Task GameOver()
+    {
+        Console.WriteLine($"GameOver called. Winner: {winnerName}");
+        gameEnded = true;
+        await InvokeAsync(StateHasChanged);
+    }
+    private async Task ProcessAnswer()
+    {
+        if (!answerSubmitted && !hasAnsweredCurrentQuestion)
+        {
+            isCorrect = false;
+            resultMessage = "Time's up! No answer submitted.";
+            showPopup = true;
+        }
+
+        await InvokeAsync(StateHasChanged);
+        await Task.Delay(2000);
+
+        showPopup = false;
+        userAnswer = "";
+        hasAnsweredCurrentQuestion = false;
+        isWaitingForNextQuestion = false;
+        await NextQuestion();
+        
+    }
+
+    private async Task EndGame()
+    {
+        gameTimer?.Dispose();
+        await hubConnection.SendAsync("EndGame", GamePin);
+    }
+
+   
+
+    private async Task NextQuestion()
+    {
+        currentQuestionIndex++;
+        if (currentQuestionIndex >= quizImages.Count)
+        {
+            currentQuestionIndex = 0;
+        }
+        currentImage = quizImages[currentQuestionIndex];
+        StartTimer();
+        await hubConnection.SendAsync("NextQuestion", GamePin, currentQuestionIndex);
+    }
+    private int CalculateScore()
+    {
+        if (_timeLeft > 25) return 1000;
+        if (_timeLeft > 20) return 80;
+        if (_timeLeft > 15) return 60;
+        if (_timeLeft > 10) return 40;
+        return 20;
+    }
+    
+
+    private void UpdateTopPlayers()
+    {
+        topPlayers = playerScores
+            .OrderByDescending(x => x.Value)
+            .Take(3)
+            .ToDictionary(x => x.Key, x => (room.Members[x.Key], x.Value));
+    }
+
+    private async Task ShowLeaderboard()
+    {
+        showLeaderboard = true;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private void ShowExitConfirmation()
+    {
+        showExitConfirmation = true;
+    }
+
+    private void ConfirmExit()
+    {
+        showExitConfirmation = false;
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void CancelExit()
+    {
+        showExitConfirmation = false;
+    }
+
+    private void ExitGame()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        gameTimer?.Dispose();
+
+        if (_timer is IAsyncDisposable timer)
+        {
+            await timer.DisposeAsync();
+        }
+        else
+        {
+            _timer?.Dispose();
+        }
+
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+}
+<style>
+    #countdown {
+        text-align: center;
+        font-size: 24px;
+        color: #4ecca3;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0a192f;
+        color: #e6f1ff;
+    }
+
+
+    .dashboard {
+        display: flex;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .sidebar {
+        width: 200px;
+        background-color: #16213e;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        border: 2px solid #4ecca3;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(78, 204, 163, 0.3);
+        margin-right: 20px;
+        height: calc(100vh - 55px); /* Reduced height */
+        margin-top: 20px;
+    }
+
+
+    .main-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stats-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .stat-card {
+        background-color: #16213e;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        flex-basis: 21%;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 2px solid #4ecca3;
+        box-shadow: 0 0 10px rgba(78, 204, 163, 0.3);
+    }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(78, 204, 163, 0.5);
+        }
+
+    .quiz-section {
+        flex-grow: 1;
+        display: flex;
+        background-color: #1e2a4a;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 2px solid #4ecca3;
+        /*  margin-bottom: 10px; */
+    }
+
+    .image-container {
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+    .question-container {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        padding: 20px;
+        background-color: #2c3e50;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+    }
+
+        .question-container h3 {
+            color: #4ecca3;
+            margin-bottom: 20px;
+        }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .input-group input {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        .input-group button {
+            padding: 12px 20px;
+            background-color: #4ecca3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .input-group button:hover {
+                background-color: #45b393;
+            }
+
+
+    .exit-button {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        background-color: #e84545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 80%; /* Make the button wider */
+        text-align: center;
+    }
+
+        .exit-button:hover {
+            background-color: #c73c3c;
+        }
+
+
+
+    .quiz-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        background-color: #1e2a4a;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 400px; /* Set a fixed height */
+    }
+
+    .image-container {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+    .question-container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        padding: 20px;
+        background-color: #2c3e50;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .question-container h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #4ecca3;
+        }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .input-group input {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+            .input-group input::placeholder {
+                color: #bdc3c7;
+            }
+
+        .input-group button {
+            padding: 12px 20px;
+            background-color: #4ecca3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            font-size: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+            .input-group button:hover {
+                background-color: #45b393;
+                transform: translateY(-2px);
+            }
+
+            .input-group button:active {
+                transform: translateY(0);
+            }
+
+    .media (max-width: 768px) {
+        .quiz-section
+
+    {
+        flex-direction: column;
+    }
+
+    .image-container, .question-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    }
+
+    .logo img {
+        width: 100%;
+        margin-bottom: 30px;
+        border-radius: 5px;
+    }
+
+    .timer-container {
+        width: 160px;
+        height: 160px;
+        margin: 20px auto;
+    }
+
+    .timer-svg {
+        transform: rotate(-90deg);
+    }
+
+    .timer-background {
+        fill: none;
+        stroke: #2a2a2a;
+        stroke-width: 10;
+    }
+
+    .timer-progress {
+        fill: none;
+        stroke: #4ecca3;
+        stroke-width: 10;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.1s linear;
+    }
+
+    .timer-text {
+        fill: white;
+        font-size: 40px;
+        font-weight: bold;
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+
+    .main-content {
+        flex-grow: 1;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .stats-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .stat-card {
+        background-color: #16213e;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        flex-basis: 21%;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 2px solid #4ecca3;
+        box-shadow: 0 0 10px rgba(78, 204, 163, 0.3);
+    }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(78, 204, 163, 0.5);
+        }
+
+    .stat-number {
+        font-size: 2em;
+        font-weight: bold;
+        color: #4ecca3;
+    }
+
+    .score-line {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .score-point {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #2a2a2a;
+    }
+
+        .score-point.team-a {
+            background-color: #4ecca3;
+        }
+
+        .score-point.team-b {
+            background-color: #e84545;
+        }
+
+    .bordered-box {
+        border: 2px solid #4ade80; /* This is a emerald-400 color from Tailwind, adjust as needed */
+        border-radius: 0.5rem; /* This adds rounded corners */
+        padding: 1rem;
+        background-color: #1e293b; /* This is the dark blue background */
+    }
+
+    .team-labels {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .team-a {
+        color: #4ecca3;
+    }
+
+    .team-b {
+        color: #e84545;
+    }
+
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .popup {
+        background-color: #16213e;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        max-width: 80%;
+        width: 400px;
+    }
+
+        .popup.correct {
+            border: 2px solid #4ecca3;
+        }
+
+        .popup.incorrect {
+            border: 2px solid #e84545;
+        }
+
+    .result-symbol {
+        font-size: 1.5em;
+        margin-right: 10px;
+    }
+
+    .popup.winner {
+        border: 2px solid #ffd700;
+    }
+
+    .media (max-width: 768px) {
+        .dashboard
+
+    {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .stats-row {
+        flex-wrap: wrap;
+    }
+
+    .stat-card {
+        flex-basis: 45%;
+        margin-bottom: 10px;
+    }
+
+    .main-content {
+        flex-grow: 1;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .game-area {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    .game-content {
+        flex-grow: 1;
+        margin-right: 20px;
+    }
+
+
+
+    .players-sidebar {
+        width: 250px;
+        background-color: #16213e;
+        padding: 20px;
+        border-radius: 10px;
+        overflow-y: auto;
+        max-height: calc(100vh - 240px);
+    }
+
+    .players-list {
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+
+    .player-item {
+        padding: 5px 0;
+        color: #e6f1ff;
+    }
+
+    @@media (max-width: 768px) {
+        .dashboard {
+            flex-direction: column;
+        }
+
+        .sidebar {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .stats-row {
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            flex-basis: 45%;
+            margin-bottom: 10px;
+        }
+
+        .game-area {
+            flex-direction: column;
+        }
+
+        .players-sidebar {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    .player-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+    }
+
+
+
+    .popup.winner {
+        border: 2px solid #ffd700;
+        background-color: #4ecca3;
+    }
+
+    .popup.loser {
+        border: 2px solid #e84545;
+        background-color: #16213e;
+    }
+
+    .popup.leaderboard {
+        background-color: #16213e;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        max-width: 80%;
+        width: 400px;
+    }
+
+        .popup.leaderboard h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .popup.leaderboard ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .popup.leaderboard li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+    .popup button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4ecca3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .popup button:hover {
+            background-color: #45b393;
+        }
+
+    .popup.game-over {
+        background-color: #16213e;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        max-width: 80%;
+        width: 400px;
+    }
+
+    .leaderboard-list {
+        list-style-type: none;
+        padding: 0;
+        text-align: left;
+    }
+
+        .leaderboard-list li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+
+    .popup.exit-confirmation {
+        background-color: #16213e;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        max-width: 80%;
+        width: 300px;
+    }
+
+    .exit-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+
+    .exit-yes, .exit-no {
+        padding: 10px 20px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-weight: bold;
+        width: 100px;
+    }
+
+    .exit-yes {
+        background-color: #4ecca3;
+    }
+
+        .exit-yes:hover {
+            background-color: #45b393;
+        }
+
+    .exit-no {
+        background-color: #e84545;
+    }
+
+        .exit-no:hover {
+            background-color: #c73c3c;
+        }
+</style>

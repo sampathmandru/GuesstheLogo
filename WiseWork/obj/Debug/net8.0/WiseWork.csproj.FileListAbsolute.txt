@@ -1,0 +1,287 @@
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\appsettings.json
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.staticwebassets.runtime.json
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.exe
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.deps.json
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.runtimeconfig.json
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.pdb
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\DnsClient.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.Security.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\MudBlazor.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Owin.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\Snappier.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.AssemblyReference.cache
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.AssemblyInfoInputs.cache
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.AssemblyInfo.cs
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.CoreCompileInputs.cache
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.WiseWork.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.build.WiseWork.props
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WiseWork.props
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WiseWork.props
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\bundle\WiseWork.styles.css
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\projectbundle\WiseWork.bundle.scp.css
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.Up2Date
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\refint\WiseWork.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.pdb
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.genruntimeconfig.cache
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\obj\Debug\net8.0\ref\WiseWork.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\appsettings.Development.json
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\appsettings.json
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.staticwebassets.runtime.json
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.exe
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.deps.json
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.runtimeconfig.json
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.pdb
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\AWSSDK.Core.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\DnsClient.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNet.SignalR.Core.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.JSInterop.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.Host.SystemWeb.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.Security.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Bson.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Driver.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\MudBlazor.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Owin.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\SharpCompress.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\Snappier.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\ZstdSharp.dll
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+E:\wise3\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.AssemblyReference.cache
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.GeneratedMSBuildEditorConfig.editorconfig
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.AssemblyInfoInputs.cache
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.AssemblyInfo.cs
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.CoreCompileInputs.cache
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.MvcApplicationPartsAssemblyInfo.cache
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.build.json
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.development.json
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.WiseWork.Microsoft.AspNetCore.StaticWebAssets.props
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.build.WiseWork.props
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WiseWork.props
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WiseWork.props
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.pack.json
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\bundle\WiseWork.styles.css
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\projectbundle\WiseWork.bundle.scp.css
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.Up2Date
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.dll
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\refint\WiseWork.dll
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.pdb
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.genruntimeconfig.cache
+E:\wise3\WiseWork\WiseWork\obj\Debug\net8.0\ref\WiseWork.dll
+C:\Users\gali likitha\source\repos\WiseWork\WiseWork\bin\Debug\net8.0\FuzzySharp.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\appsettings.Development.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\appsettings.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.staticwebassets.runtime.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.exe
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.deps.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.runtimeconfig.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.pdb
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\AWSSDK.Core.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\DnsClient.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\FuzzySharp.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNet.SignalR.Core.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.JSInterop.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.Host.SystemWeb.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.Security.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Bson.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Driver.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\MudBlazor.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Owin.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\SharpCompress.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\Snappier.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\ZstdSharp.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.AssemblyReference.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.GeneratedMSBuildEditorConfig.editorconfig
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.AssemblyInfoInputs.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.AssemblyInfo.cs
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.CoreCompileInputs.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.MvcApplicationPartsAssemblyInfo.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.build.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.development.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.WiseWork.Microsoft.AspNetCore.StaticWebAssets.props
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.build.WiseWork.props
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WiseWork.props
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WiseWork.props
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.pack.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\bundle\WiseWork.styles.css
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\projectbundle\WiseWork.bundle.scp.css
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.Up2Date
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\refint\WiseWork.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.pdb
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.genruntimeconfig.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\WiseWork\obj\Debug\net8.0\ref\WiseWork.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\appsettings.Development.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\appsettings.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.staticwebassets.runtime.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.exe
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.deps.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.runtimeconfig.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\WiseWork.pdb
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\AWSSDK.Core.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\DnsClient.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\FuzzySharp.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNet.SignalR.Core.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.JSInterop.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.Host.SystemWeb.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Microsoft.Owin.Security.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Bson.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Driver.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\MudBlazor.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Owin.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\SharpCompress.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\Snappier.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\ZstdSharp.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+E:\GuessTheLogoGame\WiseWork\WiseWork\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.AssemblyReference.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.GeneratedMSBuildEditorConfig.editorconfig
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.AssemblyInfoInputs.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.AssemblyInfo.cs
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.CoreCompileInputs.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.MvcApplicationPartsAssemblyInfo.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.build.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.development.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.WiseWork.Microsoft.AspNetCore.StaticWebAssets.props
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.build.WiseWork.props
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WiseWork.props
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WiseWork.props
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\staticwebassets.pack.json
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\bundle\WiseWork.styles.css
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\scopedcss\projectbundle\WiseWork.bundle.scp.css
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.csproj.Up2Date
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\refint\WiseWork.dll
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.pdb
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\WiseWork.genruntimeconfig.cache
+E:\GuessTheLogoGame\WiseWork\WiseWork\obj\Debug\net8.0\ref\WiseWork.dll

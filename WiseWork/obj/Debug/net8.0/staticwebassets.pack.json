@@ -1,0 +1,529 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WiseWork.bundle.scp.css",
+      "PackagePath": "staticwebassets\\WiseWork.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\Images\\logo.jpg",
+      "PackagePath": "staticwebassets\\Images\\logo.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\Images\\wel.png",
+      "PackagePath": "staticwebassets\\Images\\wel.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Aladdin.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Aladdin.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Algeria.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Algeria.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Americano.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Americano.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Apple.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Apple.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Aquaman.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Aquaman.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Ashley Look At Me.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Ashley Look At Me.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Avatar.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Avatar.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Badhal Barsath Becholi.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Badhal Barsath Becholi.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Banana.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Banana.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\BatMan.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\BatMan.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\BenTen.png",
+      "PackagePath": "staticwebassets\\quiz-images\\BenTen.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Black Berry.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Black Berry.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\BoiledEgg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\BoiledEgg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Burger.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Burger.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Captain America.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Captain America.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Chamak Chalo.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Chamak Chalo.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Cherry.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Cherry.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\CocoCola.png",
+      "PackagePath": "staticwebassets\\quiz-images\\CocoCola.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Coconut.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Coconut.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Colombia.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Colombia.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Croissant.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Croissant.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Cupcake.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Cupcake.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Dates.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Dates.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Deadpool.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Deadpool.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Dolphin.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Dolphin.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Dora.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Dora.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Doughnut.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Doughnut.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Dragon Fruit.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Dragon Fruit.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Eagel.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Eagel.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Fanta.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Fanta.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Ferrari.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Ferrari.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\FordMustang.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\FordMustang.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Gambhir.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Gambhir.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Gulabi saree.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Gulabi saree.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Hai Hai oye Hoye.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Hai Hai oye Hoye.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Ham Jo Hey Pathan.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Ham Jo Hey Pathan.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Hardik.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Hardik.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\HarryPotter.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\HarryPotter.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\HotDog.png",
+      "PackagePath": "staticwebassets\\quiz-images\\HotDog.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Infinity.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Infinity.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Iron Man.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Iron Man.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Jack Fruit.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Jack Fruit.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\JurassicPark.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\JurassicPark.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Kapil.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Kapil.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Kenya.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Kenya.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\KingKong.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\KingKong.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Kiwi.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Kiwi.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\KungFuPanda.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\KungFuPanda.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Lemon.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Lemon.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Lexus.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Lexus.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Lutu Gaye.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Lutu Gaye.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Mango.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Mango.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\MaxWell.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\MaxWell.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Micky Mouse.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Micky Mouse.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Milk Shake.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Milk Shake.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Minute Made.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Minute Made.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Mitsubishi.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Mitsubishi.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Mitsubishi.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Mitsubishi.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Mongolia.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Mongolia.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Morocco.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Morocco.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Moye Moye.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Moye Moye.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Namibia.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Namibia.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Natu Natu.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Natu Natu.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Ninja Hatori.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Ninja Hatori.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pan Cake.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pan Cake.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Panda.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Panda.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pant.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pant.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pasta.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pasta.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\PatilKaMariyam.png",
+      "PackagePath": "staticwebassets\\quiz-images\\PatilKaMariyam.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Peach.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Peach.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Peacock.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Peacock.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pear.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pear.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pine Apple.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pine Apple.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pink Panther.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pink Panther.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pirates Of The Caribbean.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pirates Of The Caribbean.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pizza.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pizza.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\PlanetOfThe APES.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\PlanetOfThe APES.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pokemon.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pokemon.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Pomegranate.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Pomegranate.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Popcorn.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Popcorn.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Raina.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Raina.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Raino.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Raino.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Rayudu.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Rayudu.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\RealMadrid.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\RealMadrid.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Rohit.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Rohit.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Rwanda.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Rwanda.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Sachin.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Sachin.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Same Same But Different.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Same Same But Different.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\SaudiArabia.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\SaudiArabia.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\SpiderMan.png",
+      "PackagePath": "staticwebassets\\quiz-images\\SpiderMan.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Sprite.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Sprite.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\StarWars.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\StarWars.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Straw Berry.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Straw Berry.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Sweden.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Sweden.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\The Incredible Hulk.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\The Incredible Hulk.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\The Incredibles.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\The Incredibles.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\TheLionKing.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\TheLionKing.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Thor.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Thor.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Tiger.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Tiger.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Titanic.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Titanic.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Uganda.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Uganda.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Unilever.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Unilever.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Virat.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Virat.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Waffle.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Waffle.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\WaltDisney.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\WaltDisney.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Warner.jpg.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Warner.jpg.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\Yogurt.png",
+      "PackagePath": "staticwebassets\\quiz-images\\Yogurt.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\bull.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\bull.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\gucci.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\gucci.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\minecraft.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\minecraft.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\nasa.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\nasa.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\orange.png",
+      "PackagePath": "staticwebassets\\quiz-images\\orange.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\premeire league.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\premeire league.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\puma.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\puma.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\shell.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\shell.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\starbucks.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\starbucks.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\water Melon.png",
+      "PackagePath": "staticwebassets\\quiz-images\\water Melon.png"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\wish.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\wish.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-images\\xbox.jpg",
+      "PackagePath": "staticwebassets\\quiz-images\\xbox.jpg"
+    },
+    {
+      "Id": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\wwwroot\\quiz-questions.json",
+      "PackagePath": "staticwebassets\\quiz-questions.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WiseWork.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WiseWork.props",
+      "PackagePath": "build\\WiseWork.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WiseWork.props",
+      "PackagePath": "buildMultiTargeting\\WiseWork.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WiseWork.props",
+      "PackagePath": "buildTransitive\\WiseWork.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

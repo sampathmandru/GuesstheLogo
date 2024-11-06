@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "dgSpecHash": "Neim7LacFtY=",
+  "success": true,
+  "projectFilePath": "E:\\GuessTheLogoGame\\WiseWork\\WiseWork\\WiseWork.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sampath\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\fuzzysharp\\2.0.2\\fuzzysharp.2.0.2.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\jquery\\1.6.4\\jquery.1.6.4.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnet.signalr\\2.4.3\\microsoft.aspnet.signalr.2.4.3.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnet.signalr.core\\2.4.3\\microsoft.aspnet.signalr.core.2.4.3.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnet.signalr.js\\2.4.3\\microsoft.aspnet.signalr.js.2.4.3.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnet.signalr.systemweb\\2.4.3\\microsoft.aspnet.signalr.systemweb.2.4.3.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.6\\microsoft.aspnetcore.authorization.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.6\\microsoft.aspnetcore.components.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.6\\microsoft.aspnetcore.components.analyzers.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\8.0.6\\microsoft.aspnetcore.components.forms.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.components.web\\8.0.6\\microsoft.aspnetcore.components.web.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\8.0.7\\microsoft.aspnetcore.connections.abstractions.8.0.7.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\8.0.7\\microsoft.aspnetcore.http.connections.client.8.0.7.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.http.connections.common\\8.0.7\\microsoft.aspnetcore.http.connections.common.8.0.7.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.6\\microsoft.aspnetcore.metadata.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.signalr.client\\8.0.7\\microsoft.aspnetcore.signalr.client.8.0.7.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core\\8.0.7\\microsoft.aspnetcore.signalr.client.core.8.0.7.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\8.0.7\\microsoft.aspnetcore.signalr.common.8.0.7.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.aspnetcore.signalr.protocols.json\\8.0.7\\microsoft.aspnetcore.signalr.protocols.json.8.0.7.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.features\\8.0.7\\microsoft.extensions.features.8.0.7.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.localization\\8.0.6\\microsoft.extensions.localization.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\8.0.6\\microsoft.extensions.localization.abstractions.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.jsinterop\\8.0.6\\microsoft.jsinterop.8.0.6.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.owin\\2.1.0\\microsoft.owin.2.1.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.owin.host.systemweb\\2.1.0\\microsoft.owin.host.systemweb.2.1.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.owin.security\\2.1.0\\microsoft.owin.security.2.1.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\mongodb.bson\\2.28.0\\mongodb.bson.2.28.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\mongodb.driver\\2.28.0\\mongodb.driver.2.28.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\mongodb.driver.core\\2.28.0\\mongodb.driver.core.2.28.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\mongodb.libmongocrypt\\1.11.0\\mongodb.libmongocrypt.1.11.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\mudblazor\\7.4.0\\mudblazor.7.4.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\owin\\1.0.0\\owin.1.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\system.threading.channels\\8.0.0\\system.threading.channels.8.0.0.nupkg.sha512",
+    "C:\\Users\\Sampath\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.SignalR.Core 2.4.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.SignalR.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.SignalR.SystemWeb 2.4.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.SignalR.SystemWeb",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Owin 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Owin",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Owin.Host.SystemWeb 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Owin.Host.SystemWeb",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Owin.Security 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Owin.Security",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json 6.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Owin 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Owin",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
