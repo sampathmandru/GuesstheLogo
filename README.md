@@ -33,7 +33,6 @@ GuessTheLogoGame is an interactive multiplayer game designed as a company stress
 - SignalR
 - C#
 - HTML/CSS
-- JavaScript
 
 ## 🎯 Key Achievements
 
